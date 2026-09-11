@@ -1,0 +1,669 @@
+/* Base theme variables */
+
+:root.pronote-obsidian-enabled body {
+  color-scheme: dark;
+
+  /* Page and text colors */
+  --color-background: #17191d !important;
+  --color-background-rgb: 23, 25, 29 !important;
+  --color-background-secondary: #20232a !important;
+  --color-background-secondary-rgb: 32, 35, 42 !important;
+  --color-background-non-editable: #262a32 !important;
+  --color-text: #f1f4f8 !important;
+  --color-text-rgb: 241, 244, 248 !important;
+  --color-text-scalePlus20: #d7dce4 !important;
+  --color-text-scalePlus30: #b8c0cb !important;
+  --color-text-scalePlus40: #9ca5b2 !important;
+  --color-shadow: #00000070 !important;
+  --color-shadow-rgb: 0, 0, 0 !important;
+  --color-trait-separateur: #343941 !important;
+  --color-red-foncee: #dc2941 !important;
+
+  /* Neutral color ramp used by PRONOTE components */
+  --theme-neutre-light: #1b1e23 !important;
+  --theme-neutre-legere: #20242a !important;
+  --theme-neutre-legere2: #262a31 !important;
+  --theme-neutre-claire: #30353e !important;
+  --theme-neutre-moyen1: #414854 !important;
+  --theme-neutre-moyen2: #555e6b !important;
+  --theme-neutre-moyen3: #6d7785 !important;
+  --theme-neutre-foncee: #aeb7c4 !important;
+  --theme-neutre-sombre: #e1e5eb !important;
+  --theme-neutre-light-rgb: 27, 30, 35 !important;
+  --theme-neutre-legere-rgb: 32, 36, 42 !important;
+  --theme-neutre-legere2-rgb: 38, 42, 49 !important;
+  --theme-neutre-claire-rgb: 48, 53, 62 !important;
+  --theme-neutre-moyen1-rgb: 65, 72, 84 !important;
+  --theme-neutre-moyen2-rgb: 85, 94, 107 !important;
+  --theme-neutre-moyen3-rgb: 109, 119, 133 !important;
+  --theme-neutre-foncee-rgb: 174, 183, 196 !important;
+  --theme-neutre-sombre-rgb: 225, 229, 235 !important;
+}
+
+/* Custom accent variables */
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] {
+  --theme-moyen1: var(--pronote-obsidian-accent) !important;
+  --theme-moyen1-rgb: var(--pronote-obsidian-accent-rgb) !important;
+  --theme-foncee: var(--pronote-obsidian-accent-dark) !important;
+  --theme-foncee-rgb: var(--pronote-obsidian-accent-dark-rgb) !important;
+  --theme-sombre: color-mix(
+    in srgb,
+    var(--pronote-obsidian-accent) 38%,
+    #111318
+  ) !important;
+  --theme-sombre-rgb: var(--pronote-obsidian-accent-rgb) !important;
+  --theme-claire: color-mix(
+    in srgb,
+    var(--pronote-obsidian-accent) 18%,
+    #ffffff
+  ) !important;
+  --theme-claire-rgb: var(--pronote-obsidian-accent-light-rgb) !important;
+  --couleur-selection: var(--pronote-obsidian-accent) !important;
+  --couleur-selection-rgb: var(--pronote-obsidian-accent-rgb) !important;
+  --couleur-surlignage-texte: var(--pronote-obsidian-accent) !important;
+}
+
+:root.pronote-obsidian-enabled body {
+  background: var(--color-background) !important;
+  color: var(--color-text) !important;
+}
+
+/* Page surfaces and windows */
+:root.pronote-obsidian-enabled .EspaceIndex,
+:root.pronote-obsidian-enabled .EspaceMobileIndex {
+  background: #17191d !important;
+}
+
+:root.pronote-obsidian-enabled .ObjetFenetre,
+:root.pronote-obsidian-enabled .Fenetre,
+:root.pronote-obsidian-enabled .ObjetFenetre_Mobile > div {
+  background: #20242a !important;
+  color: #f1f4f8 !important;
+  border-color: #353a43 !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+}
+
+:root.pronote-obsidian-enabled .ObjetFenetre_Mobile > div > section.content,
+:root.pronote-obsidian-enabled
+  .ObjetFenetre_Mobile
+  > div.ofm-design
+  > section.content {
+  background: #191c21 !important;
+  color: #eef2f7 !important;
+}
+
+/* Header and navigation */
+:root.pronote-obsidian-enabled .objetbandeauentete_global,
+:root.pronote-obsidian-enabled .objetBandeauEntete_global,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete,
+:root.pronote-obsidian-enabled .objetBandeauEntete_menu {
+  --color-background: #242830 !important;
+  background: #242830 !important;
+  color: #f4f6fa !important;
+  border-color: #383e48 !important;
+}
+
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu
+  .menu-container {
+  background: #1f2329 !important;
+  border-right: 1px solid #353a43;
+  box-shadow: 12px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+:root.pronote-obsidian-enabled .objetbandeauentete_global a,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete a {
+  color: #dbe0e8 !important;
+  text-decoration-color: transparent;
+}
+
+:root.pronote-obsidian-enabled .objetbandeauentete_global a:hover,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete a:hover {
+  color: #ffffff !important;
+}
+
+/* Active navigation states */
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  [aria-current="page"],
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] .selected,
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] .selectionne,
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] .actif,
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] .Actif {
+  background: rgba(var(--pronote-obsidian-accent-rgb), 0.14) !important;
+  color: color-mix(
+    in srgb,
+    var(--pronote-obsidian-accent) 82%,
+    #fff
+  ) !important;
+  border-color: rgba(var(--pronote-obsidian-accent-rgb), 0.22) !important;
+}
+
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  :is(
+    [aria-selected="true"],
+    [aria-pressed="true"],
+    .active,
+    .is-active,
+    .is-checked,
+    .checked,
+    .current
+  ) {
+  background-color: rgba(var(--pronote-obsidian-accent-rgb), 0.18) !important;
+  border-color: rgba(var(--pronote-obsidian-accent-rgb), 0.44) !important;
+  color: color-mix(
+    in srgb,
+    var(--pronote-obsidian-accent) 82%,
+    #fff
+  ) !important;
+}
+
+/* Buttons and interactive controls */
+:root.pronote-obsidian-enabled button,
+:root.pronote-obsidian-enabled .ieBouton,
+:root.pronote-obsidian-enabled [role="button"] {
+  border-color: #3a4049;
+  transition:
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    transform 0.12s ease;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] button,
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] .ieBouton,
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] [role="button"] {
+  border-color: rgba(var(--pronote-obsidian-accent-rgb), 0.38);
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  button:hover:not(:disabled),
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] .ieBouton:hover,
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  [role="button"]:hover {
+  border-color: rgba(var(--pronote-obsidian-accent-rgb), 0.46);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+:root.pronote-obsidian-enabled button:active:not(:disabled),
+:root.pronote-obsidian-enabled .ieBouton:active {
+  transform: translateY(1px);
+}
+
+/* Form controls */
+:root.pronote-obsidian-enabled input,
+:root.pronote-obsidian-enabled textarea,
+:root.pronote-obsidian-enabled select {
+  background: #252930 !important;
+  color: #f0f3f7 !important;
+  border-color: #3a4049 !important;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] input:focus,
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] textarea:focus,
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] select:focus {
+  border-color: rgba(var(--pronote-obsidian-accent-rgb), 0.78) !important;
+  box-shadow: 0 0 0 3px rgba(var(--pronote-obsidian-accent-rgb), 0.13) !important;
+  outline: none;
+}
+:root.pronote-obsidian-enabled ::placeholder {
+  color: #89929f !important;
+}
+
+/* Tables and selected rows */
+:root.pronote-obsidian-enabled table {
+  color: #e9edf3;
+}
+:root.pronote-obsidian-enabled th {
+  background: #252930 !important;
+  color: #f4f6f9 !important;
+  border-color: #3a4048 !important;
+}
+:root.pronote-obsidian-enabled td {
+  border-color: #30353d !important;
+}
+:root.pronote-obsidian-enabled tr:hover td {
+  background: rgba(255, 255, 255, 0.035);
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] .Selection {
+  background: rgba(var(--pronote-obsidian-accent-rgb), 0.28) !important;
+  color: #fff !important;
+}
+
+/* Preserve media and semantic icon colors */
+:root.pronote-obsidian-enabled img,
+:root.pronote-obsidian-enabled video,
+:root.pronote-obsidian-enabled canvas,
+:root.pronote-obsidian-enabled iframe,
+:root.pronote-obsidian-enabled svg {
+  filter: none;
+}
+
+/* Menus, dialogs and tooltips */
+:root.pronote-obsidian-enabled [role="dialog"],
+:root.pronote-obsidian-enabled .menu,
+:root.pronote-obsidian-enabled .Menu,
+:root.pronote-obsidian-enabled .menu-contextuel,
+:root.pronote-obsidian-enabled .ObjetMenuCtx,
+:root.pronote-obsidian-enabled [class*="tooltip"],
+:root.pronote-obsidian-enabled [class*="Tooltip"] {
+  background: #252930 !important;
+  color: #eef2f7 !important;
+  border-color: #3a4049 !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.34) !important;
+}
+
+/* Custom accent on text and focus states */
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  :is(
+    a:not([class*="icon"]),
+    .color-blue,
+    .color-info,
+    .color-accent,
+    [class*="accent"],
+    [class*="Accent"],
+    mark
+  ) {
+  color: color-mix(
+    in srgb,
+    var(--pronote-obsidian-accent) 78%,
+    #fff
+  ) !important;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  a:not([class*="icon"]),
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] .color-blue,
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] .color-info {
+  color: color-mix(
+    in srgb,
+    var(--pronote-obsidian-accent) 78%,
+    #fff
+  ) !important;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  a:not([class*="icon"]):hover {
+  text-decoration-color: var(--pronote-obsidian-accent) !important;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] *:focus-visible {
+  outline: 2px solid
+    color-mix(in srgb, var(--pronote-obsidian-accent) 86%, #fff) !important;
+  outline-offset: 2px;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  input[type="checkbox"]:checked,
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  input[type="radio"]:checked {
+  accent-color: var(--pronote-obsidian-accent) !important;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"] ::selection {
+  background: var(--pronote-obsidian-accent) !important;
+  color: #ffffff !important;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  progress::-webkit-progress-value {
+  background: var(--pronote-obsidian-accent) !important;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  progress::-moz-progress-bar {
+  background: var(--pronote-obsidian-accent) !important;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  .iecb.as-chips.is-checked {
+  background-color: rgba(var(--pronote-obsidian-accent-rgb), 0.26) !important;
+  border-color: rgba(var(--pronote-obsidian-accent-rgb), 0.62) !important;
+  color: color-mix(
+    in srgb,
+    var(--pronote-obsidian-accent) 82%,
+    #fff
+  ) !important;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  .liste_cellule_total {
+  background-color: color-mix(
+    in srgb,
+    var(--pronote-obsidian-accent) 18%,
+    #20242a
+  ) !important;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  .objetBandeauEntete_secondmenu {
+  background-color: color-mix(
+    in srgb,
+    var(--pronote-obsidian-accent) 16%,
+    #20242a
+  ) !important;
+}
+
+/* Scrollbars */
+:root.pronote-obsidian-enabled ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+:root.pronote-obsidian-enabled ::-webkit-scrollbar-track {
+  background: #191c21;
+}
+:root.pronote-obsidian-enabled ::-webkit-scrollbar-thumb {
+  background: #454c57;
+  border: 2px solid #191c21;
+  border-radius: 999px;
+}
+:root.pronote-obsidian-enabled ::-webkit-scrollbar-thumb:hover {
+  background: #596372;
+}
+:root.pronote-obsidian-enabled[data-pronote-accent="custom"]
+  ::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--pronote-obsidian-accent) 52%, #454c57);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root.pronote-obsidian-enabled *,
+  :root.pronote-obsidian-enabled *::before,
+  :root.pronote-obsidian-enabled *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Restore readable menu icon contrast without recoloring the icons */
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu:not(.ongletLudique)
+  .objetBandeauEntete_boutons
+  li
+  i,
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu:not(.ongletLudique)
+  .objetBandeauEntete_boutons
+  div.objetBandeauEntete_boutons_ifc
+  i {
+  color: #eef2f7 !important;
+  opacity: 1 !important;
+  filter: none !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+}
+
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu:not(.ongletLudique)
+  .objetBandeauEntete_boutons
+  li:hover
+  i,
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu:not(.ongletLudique)
+  .objetBandeauEntete_boutons
+  div.objetBandeauEntete_boutons_ifc:hover
+  i {
+  color: #ffffff !important;
+}
+
+/* Keep menu text and controls readable */
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu:not(.ongletLudique)
+  .menu-container,
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu:not(.ongletLudique)
+  .menu-container
+  a,
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu:not(.ongletLudique)
+  .menu-container
+  button,
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu:not(.ongletLudique)
+  .menu-container
+  span {
+  color: #e7ebf1 !important;
+}
+
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu:not(.ongletLudique)
+  .menu-container
+  a:hover,
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu:not(.ongletLudique)
+  .menu-container
+  button:hover {
+  color: #ffffff !important;
+}
+
+/* Header identity controls */
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu,
+:root.pronote-obsidian-enabled
+  .objetBandeauEntete_global
+  .objetBandeauEntete_menu {
+  --color-background: #2a2f37 !important;
+  --color-text: #edf1f6 !important;
+  background: #2a2f37 !important;
+  color: #edf1f6 !important;
+}
+
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu
+  .menu-container,
+:root.pronote-obsidian-enabled
+  .objetBandeauEntete_global
+  .objetBandeauEntete_menu
+  .menu-container {
+  background: #252a31 !important;
+  color: #e9edf3 !important;
+  border-color: #3c424c !important;
+}
+
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu
+  [class*="identite"],
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu
+  [class*="Identite"],
+:root.pronote-obsidian-enabled
+  .objetBandeauEntete_global
+  .objetBandeauEntete_menu
+  [class*="identite"],
+:root.pronote-obsidian-enabled
+  .objetBandeauEntete_global
+  .objetBandeauEntete_menu
+  [class*="Identite"] {
+  color: #eef2f7 !important;
+  opacity: 1 !important;
+}
+
+/* Header identity text hierarchy */
+:root.pronote-obsidian-enabled .objetbandeauentete_global .ie-texte,
+:root.pronote-obsidian-enabled .objetbandeauentete_global .ie-texte-small,
+:root.pronote-obsidian-enabled .objetbandeauentete_global .ie-titre,
+:root.pronote-obsidian-enabled .objetbandeauentete_global .ie-sous-titre,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete .ie-texte,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete .ie-texte-small,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete .ie-titre,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete .ie-sous-titre {
+  color: #e8edf3 !important;
+  opacity: 1 !important;
+}
+
+:root.pronote-obsidian-enabled .objetbandeauentete_global .ie-titre,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete .ie-titre {
+  color: #f7f9fc !important;
+}
+
+:root.pronote-obsidian-enabled .objetbandeauentete_global .ie-sous-titre,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete .ie-sous-titre,
+:root.pronote-obsidian-enabled .objetbandeauentete_global .ie-texte-small,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete .ie-texte-small {
+  color: #b9c1cc !important;
+}
+
+/* Keep identity text stable before hover */
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu
+  *:not(svg):not(path),
+:root.pronote-obsidian-enabled
+  .ObjetBandeauEntete
+  .objetBandeauEntete_menu
+  *:not(svg):not(path) {
+  text-shadow: none;
+}
+
+:root.pronote-obsidian-enabled .cours-annule {
+  opacity: 0.55 !important;
+}
+
+/* Neutral typography hierarchy */
+:root.pronote-obsidian-enabled body,
+:root.pronote-obsidian-enabled .ObjetFenetre,
+:root.pronote-obsidian-enabled .Fenetre {
+  color: #c8cdd5 !important;
+}
+
+:root.pronote-obsidian-enabled p,
+:root.pronote-obsidian-enabled label,
+:root.pronote-obsidian-enabled span,
+:root.pronote-obsidian-enabled div,
+:root.pronote-obsidian-enabled td,
+:root.pronote-obsidian-enabled li,
+:root.pronote-obsidian-enabled a,
+:root.pronote-obsidian-enabled button,
+:root.pronote-obsidian-enabled input,
+:root.pronote-obsidian-enabled textarea,
+:root.pronote-obsidian-enabled select {
+  color: #c8cdd5;
+}
+
+/* Strong text */
+:root.pronote-obsidian-enabled h1,
+:root.pronote-obsidian-enabled h2,
+:root.pronote-obsidian-enabled h3,
+:root.pronote-obsidian-enabled h4,
+:root.pronote-obsidian-enabled h5,
+:root.pronote-obsidian-enabled h6,
+:root.pronote-obsidian-enabled th,
+:root.pronote-obsidian-enabled .ie-titre,
+:root.pronote-obsidian-enabled .ie-texte,
+:root.pronote-obsidian-enabled [class*="titre"],
+:root.pronote-obsidian-enabled [class*="Titre"] {
+  color: #d9dde4 !important;
+}
+
+/* Secondary text */
+:root.pronote-obsidian-enabled small,
+:root.pronote-obsidian-enabled .ie-texte-small,
+:root.pronote-obsidian-enabled .ie-sous-titre,
+:root.pronote-obsidian-enabled [class*="secondaire"],
+:root.pronote-obsidian-enabled [class*="Secondaire"],
+:root.pronote-obsidian-enabled [class*="subtitle"],
+:root.pronote-obsidian-enabled [class*="sous-titre"],
+:root.pronote-obsidian-enabled [class*="SousTitre"] {
+  color: #9da5b1 !important;
+}
+
+/* Muted and disabled text */
+:root.pronote-obsidian-enabled :disabled,
+:root.pronote-obsidian-enabled [aria-disabled="true"],
+:root.pronote-obsidian-enabled .disabled,
+:root.pronote-obsidian-enabled .Disabled {
+  color: #707783 !important;
+  opacity: 1;
+}
+
+/* Header identity contrast */
+:root.pronote-obsidian-enabled .objetbandeauentete_global,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete,
+:root.pronote-obsidian-enabled .objetBandeauEntete_global {
+  color: #bfc5ce !important;
+}
+
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete .objetBandeauEntete_menu,
+:root.pronote-obsidian-enabled .objetbandeauentete_global .menu-container,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete .menu-container {
+  color: #bfc5ce !important;
+}
+
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu
+  *:not(svg):not(path),
+:root.pronote-obsidian-enabled
+  .ObjetBandeauEntete
+  .objetBandeauEntete_menu
+  *:not(svg):not(path),
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .menu-container
+  *:not(svg):not(path),
+:root.pronote-obsidian-enabled
+  .ObjetBandeauEntete
+  .menu-container
+  *:not(svg):not(path) {
+  color: #bfc5ce !important;
+}
+
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .objetBandeauEntete_menu
+  a:hover,
+:root.pronote-obsidian-enabled
+  .ObjetBandeauEntete
+  .objetBandeauEntete_menu
+  a:hover,
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  .menu-container
+  a:hover,
+:root.pronote-obsidian-enabled .ObjetBandeauEntete .menu-container a:hover {
+  color: #d4d8df !important;
+}
+
+/* Override native black text in the header */
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  [style*="color: black"],
+:root.pronote-obsidian-enabled .objetbandeauentete_global [style*="color:#000"],
+:root.pronote-obsidian-enabled
+  .objetbandeauentete_global
+  [style*="color: rgb(0"],
+:root.pronote-obsidian-enabled .ObjetBandeauEntete [style*="color: black"],
+:root.pronote-obsidian-enabled .ObjetBandeauEntete [style*="color:#000"],
+:root.pronote-obsidian-enabled .ObjetBandeauEntete [style*="color: rgb(0"] {
+  color: #bfc5ce !important;
+}
+
+:root.pronote-obsidian-enabled .ie_ellipsis span {
+  color: #606164 !important;
+}
+
+:root.pronote-obsidian-enabled .icon_eye_open {
+  color: #2c2e33 !important;
+}
+
+:root.pronote-obsidian-enabled .iecb.as-chips.is-checked {
+  background-color: #444547 !important;
+}
+
+:root.pronote-obsidian-enabled .ObjetTimeline_classScrollPanel,
+:root.pronote-obsidian-enabled .fluid-bloc.couleurClaireDuTheme,
+:root.pronote-obsidian-enabled .conteneurBandeauGrille,
+:root.pronote-obsidian-enabled .PetitEspaceHaut {
+  background-color: #17191d !important;
+}
+
+:root.pronote-obsidian-enabled .liste_cellule_total {
+  background-color: #1f2a3f !important;
+}
+
+:root.pronote-obsidian-enabled .objetBandeauEntete_secondmenu {
+  background-color: #202039 !important;
+}

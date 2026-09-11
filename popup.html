@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PRONOTE Obsidian</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="brand">
+        <div class="mark">
+          <img src="assets/icon-592.png" alt="" />
+        </div>
+        <div class="brand-copy">
+          <span class="eyebrow">THÈME POUR PRONOTE</span>
+          <h1>PRONOTE Obsidian</h1>
+          <p>Une interface sombre, nette et confortable.</p>
+        </div>
+      </header>
+
+      <section class="settings">
+        <div class="setting main-setting">
+          <div class="setting-copy">
+            <strong>Mode sombre</strong>
+            <span id="status">Activé</span>
+          </div>
+          <label
+            class="switch"
+            aria-label="Activer ou désactiver le thème sombre"
+          >
+            <input id="enabled" type="checkbox" checked />
+            <span class="slider"><span class="crystal-orb"></span></span>
+          </label>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="setting accent-setting">
+          <div class="setting-copy accent-copy">
+            <strong>Couleur d’accentuation</strong>
+            <span>Pour les éléments actifs et les détails</span>
+          </div>
+          <div class="accent-controls">
+            <button
+              id="accentOff"
+              class="accent-off"
+              type="button"
+              aria-label="Désactiver la couleur d’accentuation"
+              title="Couleur PRONOTE d'origine"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                aria-hidden="true"
+              >
+                <path
+                  fill="rgb(247, 224, 29)"
+                  d="M431.2 476.5L163.5 208.8C141.1 240.2 128 278.6 128 320C128 426 214 512 320 512C361.5 512 399.9 498.9 431.2 476.5zM476.5 431.2C498.9 399.8 512 361.4 512 320C512 214 426 128 320 128C278.5 128 240.1 141.1 208.8 163.5L476.5 431.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320z"
+                />
+              </svg>
+            </button>
+            <label
+              class="color-wrap"
+              aria-label="Choisir la couleur d'accentuation"
+              title="Choisir une couleur d'accentuation"
+            >
+              <input id="accent" type="color" value="#4f8cff" />
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <footer><span class="dot"></span> PRONOTE Obsidian <em>1.6</em></footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
